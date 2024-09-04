@@ -18,10 +18,10 @@
 
 Construir una aplicación que emule una sopa de letras utilizando Python.
 Condiciones:
--Código original
--Uso de herramientas vistas en el curso
--interacción y manejo a través de la consola
--Definido por el usuario:
+- Código original
+- Uso de herramientas vistas en el curso
+- interacción y manejo a través de la consola
+- Definido por el usuario:
 Matriz del tamaño de la sopa de letras (Min: 10x10, Max: 30x30)
 Ingreso de las palabras: Lista de coordenadas, Strings.
 Nivel de dificultad: Asociado a cantidad de palabras, verticales, horizontales, diagonales.
