@@ -495,12 +495,26 @@ Esta función elige una palabra aleatoria de la lista de palabras, la separa en 
 Entrada: Una lista vacía (que luego se llenará con letras de la palabra).
 
 Salida: La palabra seleccionada y la lista de letras que componen esa palabra.
+```python
+def escoger_separar_en_lista(letras_palabra):
+    palabra = random.choice(list(lista_palabras.keys()))  # Elegir una palabra al azar
+    palabras_buscar.append(palabra)  # Agregar la palabra a la lista de palabras a buscar
+    letras_palabra = list(palabra)  # Separar la palabra en letras
+    cantidad_palabras = len(letras_palabra)  # Contar el número de letras
+    del lista_palabras[palabra]  # Eliminar la palabra del diccionario original
+    return palabra, letras_palabra
+```
 
 ## **5. priorizar_lista_usuario(lista_palabras, lista_palabras_usuario)**
 Esta función añade las palabras personalizadas del usuario a la lista principal de palabras.
 Entrada: La lista principal de palabras y la lista de palabras del usuario.
 Salida: La lista de palabras actualizada, incluyendo las del usuario.
-
+```python
+def priorizar_lista_usuario(lista_palabras, lista_palabras_usuario):
+    for palabra in lista_palabras_usuario:
+        lista_palabras[palabra] = lista_palabras_usuario[palabra]  # Añadir las palabras del usuario a la lista principal
+    return lista_palabras
+```
 ## **6. colocar_en_sopa(sopa_de_letras, letras_palabra, filas, columnas, direccion_fila, direccion_columna)**
 Esta función coloca una palabra en la sopa de letras en la dirección especificada.
 
@@ -508,6 +522,24 @@ Entrada: La sopa de letras, la lista de letras de la palabra, las dimensiones de
 
 Salida: No retorna nada, pero actualiza la sopa de letras con la palabra colocada.
 
+```python
+def colocar_en_sopa(sopa_de_letras, letras_palabra, filas, columnas, direccion_fila, direccion_columna):
+    while True:
+        # Escoger una posición inicial al azar
+        inicio_fila = random.randint(0, filas - 1)
+        inicio_columna = random.randint(0, columnas -1)
+        # Validar si hay espacio para la palabra
+        if validar_espacio(sopa_de_letras, letras_palabra, filas, columnas, inicio_fila, inicio_columna, direccion_fila, direccion_columna):
+            contador = 0
+            # Colocar las letras de la palabra en la sopa de letras
+            for letra in letras_palabra:
+                nueva_fila = inicio_fila + contador *direccion_fila
+                nueva_columna = inicio_columna + contador *direccion_columna
+                reemplazar_letra(sopa_de_letras, nueva_fila, nueva_columna, letra)
+                contador += 1
+            break
+
+```
 **Descripción:** Coloca una palabra en la sopa de letras en la dirección especificada.
 **Parámetros:**
 
