@@ -240,7 +240,7 @@ if __name__ == "__main__":
         rotaciones_siguientes = input("¿Quiere jugar únicamente con esa rotación o quiere añadir más? Responda con 'SI' o 'NO': ").upper()
 
 
-        if rotaciones_siguientes == 'SI':
+        if rotaciones_siguientes == 'NO':
             while cantidad_rotaciones > 0:
                 rotaciones_sig = int(input("¿Qué otra rotación quiere usar?: "))
 
@@ -265,7 +265,7 @@ if __name__ == "__main__":
             if cantidad_rotaciones == 0:
                 print("No hay más rotaciones posibles, se usarán todas las rotaciones posibles.")
         else:
-            if rotaciones_siguientes == "NO":
+            if rotaciones_siguientes == "SI":
                 print("Se usará esa única rotación.")
 
 
