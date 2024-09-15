@@ -399,7 +399,7 @@ if __name__ == "__main__":
    
     print("Palabras a encontrar: " + str(palabras_buscar))
 
-```
+`````
 ## Listas y Diccionarios:
 
 letras_posibles: Lista con todas las letras del alfabeto en mayúscula. Se utiliza para rellenar la sopa de letras en posiciones vacías.
