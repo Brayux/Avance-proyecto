@@ -32,7 +32,8 @@ Nivel de dificultad: Asociado a cantidad de palabras, verticales, horizontales, 
 - Interfaz gráfica con estructura
 
 ## Diagrama preliminar:
-````mermeid
+````mermaid
+flowchart TD;
     A(Inicio) --> B[Sopa de Letras]; 
     B --> C;C{¿Desea jugar con una sopa de letras ya lista o desea crearla?}--Predefinida-->D{¿Desea un nivel facil, medio o estas preparado para el dificil?};
     C--Personalizada-->E;
